@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora simples usando Switch Case</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: darkgrey;
+            height: 100vh;
+        }
+        #resultado{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-size: 4rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="resultado"></div>
+
+    <script>
+
+        let calcular = (num1, operador, num2) => {
+            switch(operador) {
+                case "+":
+                    return num1 + num2;
+                case "-":
+                    return num1 - num2;
+                case "/":
+                    return num1 / num2;
+                case "x":
+                    return num1 * num2;
+
+                default: "Operador inválido";
+            }
+        }
+
+        let numberOne = parseFloat(prompt("Insira o primeiro número"));
+        let operador = prompt("Escolha um operador  +  -  x /")
+        let numberTwo = parseFloat(prompt("Insira o segundo número"));
+
+        let resultadoSoma = calcular(numberOne, operador, numberTwo);
+
+        document.getElementById("resultado").innerHTML = `Resultado: ${resultadoSoma}`;
+    </script>
+
+</body>
+</html>
